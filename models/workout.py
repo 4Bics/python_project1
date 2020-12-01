@@ -8,8 +8,8 @@ class Workout:
     self.date = date
     self.capacity = capacity
     self.id = id
-    self.class_list = []
-    self.instructors = []
+    # self.class_list = []
+    # self.instructors = []
   # def add_instructor(self, instructor):
   #   self.instructors.append(instructor.name)
 

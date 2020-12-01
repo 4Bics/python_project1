@@ -20,6 +20,7 @@ CREATE TABLE instructors (
 
 CREATE TABLE members (
   id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
   age INT, 
   membership_type VARCHAR(255),
   workout_id INT REFERENCES workouts(id)
