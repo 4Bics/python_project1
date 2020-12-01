@@ -6,7 +6,7 @@ from models.instructor import Instructor
 
 class TestWorkout(unittest.TestCase):
   def setUp(self):
-    self.workout = Workout("Fuego", "HIIT", "45 minutes", "5th December 2020", 25)
+    self.workout = Workout("Fuego", "HIIT", "45 minutes", "5th December 2020", 3)
     self.instructor = Instructor("Emily", 21)
     self.member = Member("Cameron", 25, "Gold")
   
@@ -28,7 +28,7 @@ class TestWorkout(unittest.TestCase):
 
 #Test workout has capacity 
   def test_workout_has_capacity(self):
-    self.assertEqual(25, self.workout.capacity)
+    self.assertEqual(3, self.workout.capacity)
 
 #Test add instructor to workout 
   def test_add_instructor(self):
@@ -37,5 +37,13 @@ class TestWorkout(unittest.TestCase):
 
 #Test add member to workout 
   def test_add_member(self):
-    self.workout.add_member(self.member)
+    self.workout.add_member_to_class(self.member)
     self.assertEqual(1, len(self.workout.class_list))
+
+#Test add member to workout - class is full
+  def test_add_member_class_full(self):
+    self.workout.add_member_to_class(self.member)
+    self.workout.add_member_to_class(self.member)
+    self.workout.add_member_to_class(self.member)
+    self.assertEqual("Class is fully booked!", self.workout.add_member_to_class(self.member))
+    self.assertEqual(3, len(self.workout.class_list))

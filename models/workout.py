@@ -1,7 +1,7 @@
 #Creating a class for classes
 
 class Workout:
-  def __init__(self, name, type, duration, date, capacity):
+  def __init__(self, name, type, duration, date, capacity, id=None):
     self.name = name
     self.type = type
     self.duration = duration
@@ -9,9 +9,13 @@ class Workout:
     self.instructors = []
     self.capacity = capacity
     self.class_list = []
+    self.id = id
 
   def add_instructor(self, instructor):
     self.instructors.append(instructor.name)
 
-  def add_member(self, member):
-    self.class_list.append(member.name)
+  def add_member_to_class(self, member):
+    if len(self.class_list) < self.capacity:
+      self.class_list.append(member.name)
+    else:
+      return "Class is fully booked!"
