@@ -2,6 +2,14 @@
 
 {% block content %}
 
-Instructors content goes here
+{% for instructor in instructors %}
+
+<h2>{{instructor.name}}</h2>
+<ul>
+  <li>{{instructor.age}}</li>
+  <li>{{instructor.workout}}</li>
+</ul>
+
+{% endfor %}
 
 {% endblock %}

@@ -2,6 +2,10 @@
 
 {% block content %}
 
-Workouts content goes here
+  {% for workout in workouts %}
+
+  <h2><a href="/workouts/{{workout.id}}">{{workout.name}}</a></h2>
+
+  {% endfor %}
 
 {% endblock %}

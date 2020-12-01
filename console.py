@@ -24,13 +24,13 @@ instructor_repository.save(instructor_3)
 instructor_test = instructor_repository.select_all()
 print(instructor_test[0].name)
 
-#MEMBER_REPOSITORY
+#INSTRUCTOR_REPOSITORY
 #Save function - working
 #Select all function - working
-#Select by id function - 
+#Select by id function - working
 #Delete all functon - working
-#Delete by id function - 
-#Update function - unsure how to test
+#Delete by id function - working
+#Update function - working
 
 member_1 = Member("Cameron", 25, "Gold", "Fuego")
 member_repository.save(member_1)
@@ -47,10 +47,10 @@ print(member_test[1].name)
 #MEMBER_REPOSITORY
 #Save function - working
 #Select all function - working
-#Select by id function - 
+#Select by id function - working
 #Delete all functon - working
-#Delete by id function - 
-#Update function - unsure how to test
+#Delete by id function - working
+#Update function - working
 
 workout_1 = Workout("Fuego", "HIIT", 45, "5th December 2020", 5)
 workout_repository.save(workout_1)
@@ -67,11 +67,9 @@ print(workout_test[2].name)
 #WORKOUT_REPOSITORY
 #Save function - working
 #Select all function - working
-#Select by id function - list index out of range error
+#Select by id function - working
 #Delete all functon - working
-#Delete by id function - still returning deleted index position
-#Update function - unsure how to test
-
-
+#Delete by id function - working
+#Update function - working
 
 pdb.set_trace()

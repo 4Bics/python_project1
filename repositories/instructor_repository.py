@@ -3,11 +3,12 @@ from models.instructor import Instructor
 
 #Create save method 
 def save(instructor):
-  sql = "INSERT INTO instructors (name, age) VALUES (%s, %s) RETURNING id"
-  values = [instructor.name, instructor.age]
+  sql = "INSERT INTO instructors (name, age, workout) VALUES (%s, %s, %s) RETURNING id"
+  values = [instructor.name, instructor.age, instructor.workout]
   results = run_sql(sql, values)
   id = results[0]['id']
   instructor.id = id
+
 
 #Create select all method
 def select_all():
