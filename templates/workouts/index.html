@@ -4,8 +4,10 @@
 
   {% for workout in workouts %}
 
-  <h2><a href="/workouts/{{workout.id}}">{{workout.name}}</a></h2>
+    <h2><a href="/workouts/{{workout.id}}">{{workout.name}}</a></h2>
 
   {% endfor %}
+
+  <h3><a href="/workouts/book">Book a class</a></h3>
 
 {% endblock %}

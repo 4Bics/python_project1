@@ -1,0 +1,46 @@
+#grid_container {
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 10% 30% 30% 30%;
+  grid-template-areas: 
+  "header header header header"
+  "sidemenu blockcontent blockcontent blockcontent"
+  "footer footer footer footer"
+  ;
+}
+
+#header {
+  grid-area: header;
+  border: 3px black solid;
+  margin: 0px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#login {
+  grid-area: login;
+  align-self: center;
+  border: 3px black solid;
+
+}
+
+#sidemenu {
+  grid-area: sidemenu;
+  border: 3px black solid;
+  display: flex;
+  align-items: center;
+  justify-self: left;
+}
+
+#blockcontent {
+  grid-area: blockcontent;
+  border: 3px black solid;
+
+}
+
+#footer {
+  grid-area: footer;
+  border: 3px black solid;
+
+}
