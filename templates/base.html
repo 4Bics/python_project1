@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <title>Gym App</title>
 </head>
@@ -12,11 +13,12 @@
     <header id="header">
       <h1>Globo Gym</h1>
       <div id="login">
-        <label for="username">Username</label>
-          <input type="text">
-        <label for="password">Password</label>
-          <input type="text">
-        <button>Log In</button>
+          <input class=inputbox type="text" placeholder="Username...">
+          <input class=inputbox type="text" placeholder="Password...">
+        <button id="loginbutton">Log In</button>
+        <button id="signupbutton">
+          <a href="/members/new">Sign Up</a>
+        </button>
       </div>
     </header>
 

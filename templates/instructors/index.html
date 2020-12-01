@@ -1,15 +1,18 @@
 {% extends 'base.html'%}
 
 {% block content %}
-
-{% for instructor in instructors %}
-
-<h2>{{instructor.name}}</h2>
-<ul>
-  <li>{{instructor.age}}</li>
-  <li>Host of the {{instructor.workout}} class</li>
-</ul>
-
-{% endfor %}
-
+<div id="meet_instructors">
+  <div>
+  {% for instructor in instructors %}
+    <h2>{{instructor.name}}</h2>
+    <ul>
+      <li>{{instructor.age}} years old</li>
+      <li>Host of the {{instructor.workout}} class</li>
+    </ul>
+  {% endfor %}
+  </div>
+  <div>
+    <img src="https://www.smh.com.au/ffximage/2004/09/08/dodgeball_wideweb__430x288.jpg" alt="">
+  </div>
+</div>
 {% endblock %}

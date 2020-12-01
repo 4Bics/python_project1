@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/workouts" method='post'>
+
+  <div id="new_workout_form">
+    <div class="new_workout">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+    </div>
+    <div class="new_workout">
+      <label for="type">Type:</label>
+      <input type="text" id="type" name="type" placeholder="Type" required autofocus>
+    </div>
+    <div class="new_workout">
+      <label for="duration">Duration:</label>
+      <input type="number" id="duration" name="duration" placeholder="Duration" required autofocus>
+      </select>
+    </div>
+    <div class="new_workout">
+      <label for="date">Date:</label>
+      <input type="text" id="date" name="date" placeholder="Date" required autofocus>
+      </select>
+    </div>
+    <div class="new_workout">
+      <label for="capacity">Capacity:</label>
+      <input type="number" id="capacity" name="capacity" placeholder="Capacity" required autofocus>
+      </select>
+    </div>
+
+    <button type="submit">Create</button>
+
+  </div>
+
+</form>
+
+
+{% endblock %}

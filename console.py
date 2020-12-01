@@ -12,13 +12,13 @@ workout_repository.delete_all()
 instructor_repository.delete_all()
 member_repository.delete_all()
 
-instructor_1 = Instructor("Emily", 21, "Fuego")
+instructor_1 = Instructor("Fran", 44, "Fuego")
 instructor_repository.save(instructor_1)
 
-instructor_2 = Instructor("Bill", 45, "Stretch")
+instructor_2 = Instructor("White Goodman", 45, "Stretch")
 instructor_repository.save(instructor_2)
 
-instructor_3 = Instructor("Paula", 66, "Spin")
+instructor_3 = Instructor("Me'Shell Jones", 35, "Spin")
 instructor_repository.save(instructor_3)
 
 instructor_test = instructor_repository.select_all()

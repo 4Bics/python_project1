@@ -22,6 +22,22 @@ def new_booking():
   members = member_repository.select_all()
   return render_template("workouts/book.html", workouts = workouts, members = members)
 
+# @workouts_blueprint.route("/workouts", methods = ['POST'])
+# def create_booking():
 
+@workouts_blueprint.route("/workout/new", methods = ['GET'])
+def new_workout():
+  workouts = workout_repository.select_all()
+  return render_template("members/new.html", workouts=workouts)
 
+@workouts_blueprint.route("/workouts", methods=['POST'])
+def create_workout():
+  name = request.form['name']
+  type = request.form['type']
+  duration = request.form['duration']
+  date = request.form['date']
+  capacity = request.form['capacity']
+  workout = Workout(name, type, duration, date, capacity)
+  workout_repository.save(workout)
+  return redirect('/workouts')
 

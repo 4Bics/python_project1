@@ -3,9 +3,12 @@
 {% block content %}
 
 {% for member in members %}
-
-<h3>{{member.name}}</h3>
-
+<div>
+  <h3>{{member.name}}</h3>
+  <h4>{{member.enrolled_class}}</h4>
+</div>
 {% endfor %}
+
+<h3><a href="/members/new">Create New Member</a></h3>
 
 {% endblock %}
