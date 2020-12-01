@@ -6,16 +6,15 @@ class Workout:
     self.type = type
     self.duration = duration
     self.date = date
-    self.instructors = []
     self.capacity = capacity
-    self.class_list = []
     self.id = id
+    self.class_list = []
+    self.instructors = []
+  # def add_instructor(self, instructor):
+  #   self.instructors.append(instructor.name)
 
-  def add_instructor(self, instructor):
-    self.instructors.append(instructor.name)
-
-  def add_member_to_class(self, member):
-    if len(self.class_list) < self.capacity:
-      self.class_list.append(member.name)
-    else:
-      return "Class is fully booked!"
+  # def add_member_to_class(self, member):
+  #   if len(self.class_list) < self.capacity:
+  #     self.class_list.append(member.name)
+  #   else:
+  #     return "Class is fully booked!"

@@ -37,3 +37,5 @@ def delete(id):
   sql = "DELETE FROM workouts WHERE id = %s"
   values = [id]
   run_sql(sql, values)
+
+#Create update by id

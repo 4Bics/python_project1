@@ -12,3 +12,7 @@ class TestInstructor(unittest.TestCase):
 #Test instructor has age
   def test_instructor_has_age(self):
     self.assertEqual(21, self.instructor.age)
+
+#Test unsaved has none id
+  def test_instructor_has_none_id(self):
+    self.assertEqual(None, self.instructor.id)

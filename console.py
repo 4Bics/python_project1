@@ -31,11 +31,14 @@ workout_repository.delete_all()
 workout_1 = Workout("Fuego", "HIIT", 45, "5th December 2020", 5)
 workout_repository.save(workout_1)
 
-workout_2 = Workout("Stretch", "Yoga", 70, "6th December 2020", 5)
+workout_2 = Workout("Stretch", "Yoga", 70, "6th December 2020", 3)
 workout_repository.save(workout_2)
 
-workout_3 = Workout("Spin", "Cycle", 30, "7th December 2020", 5)
+workout_3 = Workout("Spin", "Cycle", 30, "7th December 2020", 15)
 workout_repository.save(workout_3)
 
-first_workout = workout_repository.select_all()
-print(first_workout[0].name)
+#Save function - working
+#Select all function - working
+#Select by id - list index out of range error
+
+pdb.set_trace()

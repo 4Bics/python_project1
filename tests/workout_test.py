@@ -30,20 +30,24 @@ class TestWorkout(unittest.TestCase):
   def test_workout_has_capacity(self):
     self.assertEqual(3, self.workout.capacity)
 
-#Test add instructor to workout 
-  def test_add_instructor(self):
-    self.workout.add_instructor(self.instructor)
-    self.assertEqual(1, len(self.workout.instructors))
+#Test unsaved has none id
+  def test_workout_has_none_id(self):
+    self.assertEqual(None, self.workout.id)
 
-#Test add member to workout 
-  def test_add_member(self):
-    self.workout.add_member_to_class(self.member)
-    self.assertEqual(1, len(self.workout.class_list))
+# #Test add instructor to workout 
+#   def test_add_instructor(self):
+#     self.workout.add_instructor(self.instructor)
+#     self.assertEqual(1, len(self.workout.instructors))
 
-#Test add member to workout - class is full
-  def test_add_member_class_full(self):
-    self.workout.add_member_to_class(self.member)
-    self.workout.add_member_to_class(self.member)
-    self.workout.add_member_to_class(self.member)
-    self.assertEqual("Class is fully booked!", self.workout.add_member_to_class(self.member))
-    self.assertEqual(3, len(self.workout.class_list))
+# #Test add member to workout 
+#   def test_add_member(self):
+#     self.workout.add_member_to_class(self.member)
+#     self.assertEqual(1, len(self.workout.class_list))
+
+# #Test add member to workout - class is full
+#   def test_add_member_class_full(self):
+#     self.workout.add_member_to_class(self.member)
+#     self.workout.add_member_to_class(self.member)
+#     self.workout.add_member_to_class(self.member)
+#     self.assertEqual("Class is fully booked!", self.workout.add_member_to_class(self.member))
+#     self.assertEqual(3, len(self.workout.class_list))

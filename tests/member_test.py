@@ -20,3 +20,7 @@ class TestMember(unittest.TestCase):
 #Test member has class credits
   def test_member_has_class_credits(self):
     self.assertEqual(0, self.member.class_credits)
+
+#Test unsaved has none id
+  def test_member_has_none_id(self):
+    self.assertEqual(None, self.member.id)
