@@ -50,3 +50,8 @@ def update_workout(id):
   workout = Workout(name, type, duration, date, capacity, id)
   workout_repository.update(workout)
   return redirect('/workouts')
+
+@workouts_blueprint.route("/workouts/<id>/delete", methods=["POST"])
+def delete_workout(id):
+    workout_repository.delete(id)
+    return redirect("/workouts")

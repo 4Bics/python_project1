@@ -27,6 +27,11 @@
   <a href="/workouts/{{workout.id}}/edit">Edit workout</a>
 </div>
 <div>
+  <form action="/workouts/{{workout.id}}/delete" method="POST">
+    <input type="submit" value="Delete">
+  </form>
+</div>
+<div>
   <a href="/workouts">Return to workouts</a>
 </div>
 

@@ -15,6 +15,11 @@
   <a href="/members/{{member.id}}/edit">Edit Member</a>
 </div>
 <div>
+  <form action="/members/{{member.id}}/delete" method="POST">
+    <input type="submit" value="Delete">
+  </form>
+</div>
+<div>
   <a href="/members">Return to Members</a>
 </div>
 
