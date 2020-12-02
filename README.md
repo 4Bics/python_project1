@@ -1,8 +1,7 @@
 Hello and welcome to my gym application!
 
-running instructions for your applications (so 
-other people can clone it and run it)
 1. Running Instructions
+
 Use the side menu to access the part of the website you seek to use.
 
 To create/edit/delete bookings use the bookings tab.
