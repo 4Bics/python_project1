@@ -16,14 +16,14 @@ def save(booking):
 
 def select_all():
   bookings = []
-  sql = "SELECT * FROM bitings"
+  sql = "SELECT * FROM bookings"
   results = run_sql(sql)
   for result in results:
     workout = workout_repository.select(result["workout_id"])
     member = member_repository.select(result["member_id"])
     booking = Booking(workout, member, result["id"])
     bookings.append(booking)
-  return booking
+  return bookings
 
 def select(id):
   sql = "SELECT * FROM bookings WHERE id = %s"

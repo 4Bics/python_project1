@@ -7,7 +7,7 @@ body {
   margin: 0px;
   display: grid;
   grid-template-columns :25% 25% 25% 25%;
-  grid-template-rows: 25% auto 25%;
+  grid-template-rows: auto;
   grid-template-areas: 
   "header header header header"
   "sidemenu blockcontent blockcontent blockcontent"
@@ -131,4 +131,15 @@ body {
 .new_member {
   display: flex;
   padding: 5px;
+}
+
+#footer_lists {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#footer_lists > ul > li {
+  list-style: none;
 }

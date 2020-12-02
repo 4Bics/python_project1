@@ -8,19 +8,20 @@ from models.booking import Booking
 import repositories.workout_repository as workout_repository
 import repositories.member_repository as member_repository
 import repositories.instructor_repository as instructor_repository
+import repositories.booking_repository as booking_repository
 
 workout_repository.delete_all()
 instructor_repository.delete_all()
 member_repository.delete_all()
 
 #Default Instructors 
-instructor_1 = Instructor("Fran", 44, "Fuego")
+instructor_1 = Instructor("Fran", 44, "HIIT")
 instructor_repository.save(instructor_1)
 
-instructor_2 = Instructor("White Goodman", 45, "Stretch")
+instructor_2 = Instructor("White Goodman", 45, "Yoga")
 instructor_repository.save(instructor_2)
 
-instructor_3 = Instructor("Me'Shell Jones", 35, "Spin")
+instructor_3 = Instructor("Me'Shell Jones", 35, "Cycle")
 instructor_repository.save(instructor_3)
 
 instructor_test = instructor_repository.select_all()
@@ -78,7 +79,10 @@ print(workout_test[2].name)
 
 #Default Bookings
 booking_1 = Booking(workout_1, member_1)
+booking_repository.save(booking_1)
 booking_2 = Booking(workout_2, member_2)
+booking_repository.save(booking_2)
 booking_3 = Booking(workout_3, member_3)
+booking_repository.save(booking_3)
 
 pdb.set_trace()
