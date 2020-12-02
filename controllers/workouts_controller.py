@@ -54,7 +54,7 @@ def update_workout(id):
   duration = request.form['duration']
   date = request.form['date']
   capacity = request.form['capacity']
-  workout = Workout(name, type, duration, date, capacity)
+  workout = Workout(name, type, duration, date, capacity, id)
   workout_repository.update(workout)
   return redirect('/workouts')
 
