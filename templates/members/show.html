@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{member.name}}</h1>
+
+<ul>
+  <li>Age: {{member.age}}</li>
+
+  <li>Membership Type: {{member.membership_type}}</li>
+
+  <li>Enrolled Class: {{member.enrolled_class}}</li>
+</ul>
+<div>
+  <a href="/members/{{member.id}}/edit">Edit Member</a>
+</div>
+<div>
+  <a href="/members">Return to Members</a>
+</div>
+
+
+{% endblock %}

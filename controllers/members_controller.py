@@ -11,6 +11,11 @@ def members():
   members = member_repository.select_all()
   return render_template("members/index.html", members = members)
 
+@members_blueprint.route("/members/<id>")
+def show(id):
+  member = member_repository.select(id)
+  return render_template("members/show.html", member = member)
+
 @members_blueprint.route("/members/new", methods = ['GET'])
 def new_member():
   members = member_repository.select_all()
@@ -26,4 +31,21 @@ def create_member():
   enrolled_class = request.form['enrolled_class']
   member = Member(name, age, membership_type, enrolled_class)
   member_repository.save(member)
+  return redirect('/members')
+
+#Edit workout
+@members_blueprint.route("/members/<id>/edit", methods=['GET'])
+def edit_member(id):
+  member = member_repository.select(id)
+  workouts = workout_repository.select_all()
+  return render_template('members/edit.html', member = member, workouts = workouts)
+
+@members_blueprint.route("/members/<id>", methods=['POST'])
+def update_member(id):
+  name = request.form['name']
+  age = request.form['age']
+  membership_type = request.form['membership_type']
+  enrolled_class = request.form['workout']
+  member = Member(name, age, membership_type, enrolled_class)
+  member_repository.update(member)
   return redirect('/members')

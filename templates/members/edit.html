@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/members/{{member.id}}" method="post">
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" value="{{member.name}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="age">Age: </label>
+    <input type="number" id="age" name="age" value="{{member.age}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="membership_type">Membership Type: </label>
+    <input type="text" id="membership_type" name="membership_type" value="{{member.membership_type}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="workout">Select Workout: </label>
+    <select name="workout" id="workout">
+      {% for workout in workouts %}
+
+        <option value="{{workout.id}}">{{workout.name}}</option>
+
+      {% endfor %}
+    </select>
+  </div>
+
+  <button type="submit">Update workout</button>
+
+</form>
+
+{% endblock %}
