@@ -18,17 +18,6 @@
     <input type="text" id="membership_type" name="membership_type" value="{{member.membership_type}}" required autofocus>
   </div>
 
-  <div>
-    <label for="workout">Select Workout: </label>
-    <select name="workout" id="workout">
-      {% for workout in workouts %}
-
-        <option value="{{workout.id}}">{{workout.name}}</option>
-
-      {% endfor %}
-    </select>
-  </div>
-
   <button type="submit">Update workout</button>
 
 </form>

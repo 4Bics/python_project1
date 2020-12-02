@@ -27,3 +27,9 @@ CREATE TABLE members (
   enrolled_class VARCHAR(255),
   workout_id INT REFERENCES workouts(id)
 );
+
+CREATE TABLE bookings (
+  id SERIAL PRIMARY KEY,
+  workout_id INT REFERENCES workouts(id)
+  member_id INT REFERENCES members(id)
+)

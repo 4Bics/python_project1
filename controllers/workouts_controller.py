@@ -16,15 +16,6 @@ def show(id):
   workout = workout_repository.select(id)
   return render_template("workouts/show.html", workout = workout)
 
-@workouts_blueprint.route("/workouts/book", methods = ['GET'])
-def new_booking():
-  workouts = workout_repository.select_all()
-  members = member_repository.select_all()
-  return render_template("workouts/book.html", workouts = workouts, members = members)
-
-# @workouts_blueprint.route("/workouts", methods = ['POST'])
-# def create_booking():
-
 #Get New Workout
 @workouts_blueprint.route("/workouts/new", methods = ['GET'])
 def new_workout():

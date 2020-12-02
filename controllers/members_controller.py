@@ -27,9 +27,7 @@ def create_member():
   name = request.form['name']
   age = request.form['age']
   membership_type = request.form['membership_type']
-  # enrolled_class = member_repository.select(request.form['workout.id'])
-  enrolled_class = request.form['enrolled_class']
-  member = Member(name, age, membership_type, enrolled_class)
+  member = Member(name, age, membership_type)
   member_repository.save(member)
   return redirect('/members')
 
@@ -45,7 +43,6 @@ def update_member(id):
   name = request.form['name']
   age = request.form['age']
   membership_type = request.form['membership_type']
-  enrolled_class = request.form['workout']
-  member = Member(name, age, membership_type, enrolled_class, id)
+  member = Member(name, age, membership_type, id)
   member_repository.update(member)
   return redirect('/members')
