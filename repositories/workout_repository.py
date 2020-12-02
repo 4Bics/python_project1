@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.workout import Workout
+from models.member import Member
 
 #Create save method 
 def save(workout):
@@ -43,3 +44,13 @@ def update(workout):
   sql = "UPDATE workouts SET (name, type, duration, date, capacity) = (%s, %s, %s, %s, %s) WHERE id = %s"
   values = [workout.name, workout.type, workout.duration, workout.date, workout.capacity, workout.id]
   run_sql(sql, values)
+
+def select_members_of_workout(id):
+  members = []
+  sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.workout_id = %s"
+  values = [id]
+  results = run_sql(sql, values)
+  for result in results:
+    member = Member(result["name"], result["age"], result["membership_type"])
+    members.append(member)
+  return members

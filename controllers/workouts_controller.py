@@ -13,7 +13,8 @@ def workouts():
 @workouts_blueprint.route("/workouts/<id>")
 def show(id):
   workout = workout_repository.select(id)
-  return render_template("workouts/show.html", workout = workout)
+  members = workout_repository.select_members_of_workout(id)
+  return render_template("workouts/show.html", workout = workout, members=members)
 
 #Get New Workout
 @workouts_blueprint.route("/workouts/new", methods = ['GET'])

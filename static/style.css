@@ -27,6 +27,11 @@ body {
   border: black solid 5px;
 }
 
+#header > div > h1 > a {
+  text-decoration: none;
+  color: white;
+}
+
 #login {
   grid-area: login;
   align-self: center;

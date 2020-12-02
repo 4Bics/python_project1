@@ -10,6 +10,15 @@
   <li>Duration: {{workout.duration}} minutes</li>
 
   <li>{{workout.date}}</li>
+
+  <h3>Members enrolled in class: </h3>
+
+  {% for member in members %}
+
+  <li>{{member.name}}</li>
+
+  {% endfor %}
+
 </ul>
 <div>
   <a href="/workouts/book">Book this class</a>
